@@ -206,19 +206,43 @@ const globalCSS = `
     background: #f5f1eb;
     padding: 0;
   }
-
+ 
   .disc-topbar {
     border-bottom: 1px solid #e0d9d0;
-    padding: 1.5rem 2.5rem;
+    padding: 1.2rem 2.5rem;
     display: flex;
     align-items: center;
-    gap: 1rem;
+    justify-content: space-between;
+    gap: 1.5rem;
     background: #f5f1eb;
     position: sticky;
     top: 0;
     z-index: 10;
   }
-
+ 
+  .disc-topbar-left {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    flex: 1;
+    min-width: 0;
+  }
+ 
+  .disc-topbar-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+  }
+ 
+  .disc-topbar-cover {
+    width: 38px;
+    height: 56px;
+    object-fit: cover;
+    flex-shrink: 0;
+    box-shadow: 1px 2px 8px rgba(0,0,0,0.15);
+  }
+ 
   .back-btn {
     background: none;
     border: 1px solid #d4cbc0;
@@ -233,30 +257,62 @@ const globalCSS = `
     transition: border-color 0.2s, color 0.2s;
     flex-shrink: 0;
   }
-
+ 
   .back-btn:hover {
     border-color: #8c7f72;
     color: #1c1814;
   }
-
+ 
   .disc-topbar-club {
     font-size: 10px;
     font-weight: 600;
     letter-spacing: 0.22em;
     text-transform: uppercase;
     color: #b0a498;
+    flex-shrink: 0;
   }
-
+ 
+  .disc-topbar-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: #1c1814;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.2;
+  }
+ 
+  .disc-topbar-author {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 12px;
+    color: #8c7f72;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+ 
+  .disc-topbar-guide {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #b0a498;
+    margin-top: 2px;
+  }
+ 
   .disc-body {
     max-width: 640px;
     margin: 0 auto;
-    padding: 3rem 2rem 5rem;
+    padding: 2.5rem 2rem 5rem;
   }
-
+ 
   .disc-header {
     margin-bottom: 3rem;
   }
-
+ 
   .disc-book-label {
     font-size: 10px;
     font-weight: 600;
@@ -265,7 +321,7 @@ const globalCSS = `
     color: #8c7f72;
     margin-bottom: 12px;
   }
-
+ 
   .disc-book-title {
     font-family: 'Playfair Display', serif;
     font-size: 32px;
@@ -274,7 +330,7 @@ const globalCSS = `
     line-height: 1.25;
     margin-bottom: 8px;
   }
-
+ 
   .disc-book-author {
     font-family: 'Playfair Display', serif;
     font-style: italic;
@@ -282,7 +338,7 @@ const globalCSS = `
     font-weight: 400;
     color: #8c7f72;
   }
-
+ 
   .disc-header-line {
     width: 100%;
     height: 1px;
@@ -291,7 +347,7 @@ const globalCSS = `
     border: none;
     display: block;
   }
-
+ 
   .disc-q-count {
     font-size: 10px;
     font-weight: 600;
@@ -300,16 +356,16 @@ const globalCSS = `
     color: #b0a498;
     margin-bottom: 1.5rem;
   }
-
+ 
   /* Accordion */
   .accordion-item {
     border-bottom: 1px solid #e0d9d0;
   }
-
+ 
   .accordion-item:first-child {
     border-top: 1px solid #e0d9d0;
   }
-
+ 
   .accordion-btn {
     width: 100%;
     background: none;
@@ -323,11 +379,11 @@ const globalCSS = `
     font-family: 'Montserrat', sans-serif;
     transition: background 0.15s;
   }
-
+ 
   .accordion-btn:hover .accordion-q-text {
     color: #3a2e24;
   }
-
+ 
   .accordion-num {
     font-size: 10px;
     font-weight: 700;
@@ -338,7 +394,7 @@ const globalCSS = `
     font-family: 'Montserrat', sans-serif;
     padding-top: 1px;
   }
-
+ 
   .accordion-q-text {
     font-size: 13px;
     font-weight: 600;
@@ -349,7 +405,7 @@ const globalCSS = `
     transition: color 0.15s;
     text-align: left;
   }
-
+ 
   .accordion-chevron {
     font-size: 16px;
     color: #c4b9ae;
@@ -357,12 +413,12 @@ const globalCSS = `
     transition: transform 0.25s cubic-bezier(0.4,0,0.2,1), color 0.15s;
     line-height: 1;
   }
-
+ 
   .accordion-chevron.open {
     transform: rotate(180deg);
     color: #8c7f72;
   }
-
+ 
   .accordion-body {
     padding: 0 0 1.4rem calc(28px + 1rem);
     font-size: 13px;
@@ -418,16 +474,22 @@ function DiscussionPage({ onBack }) {
           <button className="back-btn" onClick={onBack}>
             ← Back
           </button>
+          <div className="disc-topbar-left">
+            <img
+              src={COVER_IMAGE}
+              alt="Book cover"
+              className="disc-topbar-cover"
+            />
+            <div className="disc-topbar-text">
+              <span className="disc-topbar-title">{BOOK_TITLE}</span>
+              <span className="disc-topbar-author">{AUTHOR}</span>
+              <span className="disc-topbar-guide">Discussion Guide</span>
+            </div>
+          </div>
           <span className="disc-topbar-club">{CLUB_NAME}</span>
         </div>
         <div className="disc-body">
-          <div className="disc-header">
-            <p className="disc-book-label">Discussion Guide</p>
-            <p className="disc-book-title">{BOOK_TITLE}</p>
-            <p className="disc-book-author">{AUTHOR}</p>
-            <hr className="disc-header-line" />
-          </div>
-          <p className="disc-q-count">10 Prompts</p>
+          <p className="disc-q-count">{QUESTIONS.length} Questions</p>
           <div>
             {QUESTIONS.map((item, i) => {
               const isOpen = openIndex === i;
