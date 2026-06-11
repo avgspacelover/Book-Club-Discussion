@@ -79,9 +79,9 @@ const globalCSS = `
   .cover-root {
     min-height: 100vh;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-    padding: 1rem 1.5rem;
+    padding: 1.5rem 1.5rem;
     background: #f5f1eb;
   }
 
