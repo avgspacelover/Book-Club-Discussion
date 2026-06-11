@@ -501,7 +501,7 @@ function DiscussionPage({ onBack }) {
           <span className="disc-topbar-club">{CLUB_NAME}</span>
         </div>
         <div className="disc-body">
-          <p className="disc-q-count">{QUESTIONS.length} Questions</p>
+          <p className="disc-q-count">{QUESTIONS.length} Prompts</p>
           <div>
             {QUESTIONS.map((item, i) => {
               const isOpen = openIndex === i;
