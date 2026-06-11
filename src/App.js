@@ -81,7 +81,7 @@ const globalCSS = `
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 3rem 1.5rem;
+    padding: 1rem 1.5rem;
     background: #f5f1eb;
   }
 
