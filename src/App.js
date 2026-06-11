@@ -335,7 +335,6 @@ const globalCSS = `
     text-transform: uppercase;
     color: #b0a498;
     margin-bottom: 1.5rem;
-    margin-top: 1.5rem;
   }
  
   /* Accordion */
