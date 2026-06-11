@@ -335,6 +335,7 @@ const globalCSS = `
     text-transform: uppercase;
     color: #b0a498;
     margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
   }
  
   /* Accordion */
@@ -451,20 +452,26 @@ function DiscussionPage({ onBack }) {
     <>
       <InjectCSS />
       <div className="disc-root">
-      <div className="disc-topbar">
-        <div className="disc-topbar-row1">
-          <button className="back-btn" onClick={onBack}>←</button>
-          <span className="disc-topbar-club">{CLUB_NAME}</span>
+        <div className="disc-topbar">
+          <div className="disc-topbar-row1">
+            <button className="back-btn" onClick={onBack}>
+              ←
+            </button>
+            <span className="disc-topbar-club">{CLUB_NAME}</span>
+          </div>
+          <div className="disc-topbar-row2">
+            <img
+              src={COVER_IMAGE}
+              alt="Book cover"
+              className="disc-topbar-cover"
+            />
+            <div className="disc-topbar-text">
+              <span className="disc-topbar-title">{BOOK_TITLE}</span>
+              <span className="disc-topbar-author">{AUTHOR}</span>
+              <span className="disc-topbar-guide">Discussion Guide</span>
+            </div>
+          </div>
         </div>
-        <div className="disc-topbar-row2">
-          <img src={COVER_IMAGE} alt="Book cover" className="disc-topbar-cover" />
-          <div className="disc-topbar-text">
-          <span className="disc-topbar-title">{BOOK_TITLE}</span>
-          <span className="disc-topbar-author">{AUTHOR}</span>
-          <span className="disc-topbar-guide">Discussion Guide</span>
-        </div>
-      </div>
-</div>
         <div className="disc-body">
           <p className="disc-q-count">{QUESTIONS.length} Prompts</p>
           <div>
