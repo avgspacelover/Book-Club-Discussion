@@ -256,22 +256,18 @@ const globalCSS = `
  
   .back-btn {
     background: none;
-    border: 1px solid #d4cbc0;
     color: #8c7f72;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    cursor: pointer;
-    padding: 7px 14px;
-    transition: border-color 0.2s, color 0.2s;
+    border: none;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 0 10px 0 0;
+    transition: color 0.2s, transform 0.15s
     flex-shrink: 0;
   }
  
   .back-btn:hover {
-    border-color: #8c7f72;
-    color: #1c1814;
+     color: #1c1814; 
+     transform: translateX(-2px); 
   }
  
   .disc-topbar-club {
@@ -484,7 +480,7 @@ function DiscussionPage({ onBack }) {
       <div className="disc-root">
         <div className="disc-topbar">
           <button className="back-btn" onClick={onBack}>
-            ← Back
+            ←
           </button>
           <div className="disc-topbar-left">
             <img
