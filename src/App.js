@@ -12,54 +12,54 @@ const COVER_IMAGE = coverImg;
 
 const QUESTIONS = [
   {
-    q: "Question 1: Opening theme",
+    q: "Playing God",
     context:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Discuss how the opening sets the tone for the rest of the narrative.",
+      " If you could simulate a universe and intervene in it, would you? Where would you draw the ethical line?",
   },
   {
-    q: "Question 2: Character development",
+    q: "Living in a simulation",
     context:
-      "How do the main characters evolve throughout the story? Consider the pivotal moments that shaped their decisions and what this reveals about the author's intent.",
+      " If you found out your reality was a simulation run by someone else, would it change how you live? Does 'real' experience require a'real' world?",
   },
   {
-    q: "Question 3: Central conflict",
+    q: "Truthfulness as chaos",
     context:
-      "What is the core tension driving the plot? How does the author build and resolve — or leave unresolved — this conflict by the final chapter?",
+      " The lapel pin that only tells the truth causes disorder wherever it goes. Is the novel suggesting that honesty is socially destabilising, or that the world is built on convenient fictions?",
   },
   {
-    q: "Question 4: Setting and atmosphere",
+    q: "Private vs. public belief",
     context:
-      "How does the setting function as more than a backdrop? Consider how place and time influence character behavior and thematic meaning in the book.",
+      "The science-hating movement is partly built on community, not just ideology. How much of what people believe is about belonging rather than truth?",
   },
   {
-    q: "Question 5: Narrative voice",
+    q: "Incompetence vs. expertise",
     context:
-      "Discuss the choice of narrator and point of view. How does the narrative voice shape what we know, what we're denied, and how we feel about the story?",
+      "Can you think of a time when an outsider or an amateur disrupted a system that experts couldn't? Is there value in not knowing the rules?",
   },
   {
-    q: "Question 6: Symbolism and motifs",
+    q: "The creator's responsibility",
     context:
-      "Identify a recurring symbol or motif. What does it represent, and how does its meaning shift across different parts of the book?",
+      "If you bring something into existence — a child, a company, a community — what obligations does that create? Can you ever fully exit that responsibility?",
   },
   {
-    q: "Question 7: Relationships",
+    q: "Meaning without purpose",
     context:
-      "Pick two characters whose relationship most interested you. What does their dynamic reveal about broader themes of power, love, loyalty, or conflict?",
+      " If you learned your life was part of someone else's experiment, and their goal had nothing to do with your happiness, could you still find your own meaning?",
   },
   {
-    q: "Question 8: Moral questions",
+    q: "Gill's standup voice on the page ",
     context:
-      "Does the book present a clear moral stance, or does it deliberately resist one? Were there moments where you found yourself questioning your own values?",
+      "Several readers note they could 'hear' Gill's voice while reading. Is this an asset to the novel or a limitation? What does it mean for fiction to carry a performer's presence?",
   },
   {
-    q: "Question 9: Resonance",
+    q: "Comedy and hard questions",
     context:
-      "Which scene or passage stayed with you most after finishing the book, and why? What does its lingering effect tell you about the book's deeper concerns?",
+      "  Do you find it easier to engage with difficult ideas (death, meaninglessness, God) when they're wrapped in humour? Or does comedy trivialise them?",
   },
   {
-    q: "Question 10: Overall verdict",
+    q: "What does 'Acts of God' mean?",
     context:
-      "How would you evaluate this book in terms of its ambition and execution? What did it do well, and where did it fall short for you personally?",
+      "The title traditionally refers to unforeseeable events beyond human control. By the end of the novel, how has Gill reframed or complicated that definition?",
   },
 ];
 
@@ -427,7 +427,7 @@ function DiscussionPage({ onBack }) {
             <p className="disc-book-author">{AUTHOR}</p>
             <hr className="disc-header-line" />
           </div>
-          <p className="disc-q-count">{QUESTIONS.length} Questions</p>
+          <p className="disc-q-count">10 Prompts</p>
           <div>
             {QUESTIONS.map((item, i) => {
               const isOpen = openIndex === i;
