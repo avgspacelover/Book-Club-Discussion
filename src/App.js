@@ -220,32 +220,39 @@ const globalCSS = `
  
   .disc-topbar {
     border-bottom: 1px solid #e0d9d0;
-    padding: 1.2rem 2.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1.5rem;
+    padding: 0.9rem 1.5rem;
     background: #f5f1eb;
     position: sticky;
     top: 0;
     z-index: 10;
   }
- 
-  .disc-topbar-left {
+  /* 1. row1 — centered with relative positioning for back btn */
+  .disc-topbar-row1 {
     display: flex;
     align-items: center;
-    gap: 1.25rem;
-    flex: 1;
-    min-width: 0;
+    justify-content: center;
+    margin-bottom: 0.6rem;
+    position: relative;
   }
- 
+  
+  /* 2. row2 — centered */
+  .disc-topbar-row2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.9rem;
+  }
+  
+  /* 3. text block — center aligned */
   .disc-topbar-text {
     display: flex;
     flex-direction: column;
     gap: 2px;
     min-width: 0;
+    align-items: center;
+    text-align: center;
   }
- 
+  
   .disc-topbar-cover {
     width: 38px;
     height: 56px;
@@ -256,13 +263,16 @@ const globalCSS = `
  
   .back-btn {
     background: none;
-    color: #8c7f72;
     border: none;
+    color: #8c7f72;
     font-size: 18px;
     font-weight: 400;
-    padding: 0 10px 0 0;
-    transition: color 0.2s, transform 0.15s
-    flex-shrink: 0;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+    position: absolute;
+    left: 0;
+    transition: color 0.2s, transform 0.15s;
   }
  
   .back-btn:hover {
@@ -276,7 +286,6 @@ const globalCSS = `
     letter-spacing: 0.22em;
     text-transform: uppercase;
     color: #b0a498;
-    flex-shrink: 0;
   }
  
   .disc-topbar-title {
@@ -309,52 +318,16 @@ const globalCSS = `
     color: #b0a498;
     margin-top: 2px;
   }
- 
+
+
   .disc-body {
     max-width: 640px;
     margin: 0 auto;
     padding: 2.5rem 2rem 5rem;
   }
+ /*
  
-  .disc-header {
-    margin-bottom: 3rem;
-  }
- 
-  .disc-book-label {
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: #8c7f72;
-    margin-bottom: 12px;
-  }
- 
-  .disc-book-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 32px;
-    font-weight: 700;
-    color: #1c1814;
-    line-height: 1.25;
-    margin-bottom: 8px;
-  }
- 
-  .disc-book-author {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-size: 15px;
-    font-weight: 400;
-    color: #8c7f72;
-  }
- 
-  .disc-header-line {
-    width: 100%;
-    height: 1px;
-    background: #e0d9d0;
-    margin-top: 2rem;
-    border: none;
-    display: block;
-  }
- 
+ */
   .disc-q-count {
     font-size: 10px;
     font-weight: 600;
@@ -478,24 +451,20 @@ function DiscussionPage({ onBack }) {
     <>
       <InjectCSS />
       <div className="disc-root">
-        <div className="disc-topbar">
-          <button className="back-btn" onClick={onBack}>
-            ←
-          </button>
-          <div className="disc-topbar-left">
-            <img
-              src={COVER_IMAGE}
-              alt="Book cover"
-              className="disc-topbar-cover"
-            />
-            <div className="disc-topbar-text">
-              <span className="disc-topbar-title">{BOOK_TITLE}</span>
-              <span className="disc-topbar-author">{AUTHOR}</span>
-              <span className="disc-topbar-guide">Discussion Guide</span>
-            </div>
-          </div>
+      <div className="disc-topbar">
+        <div className="disc-topbar-row1">
+          <button className="back-btn" onClick={onBack}>←</button>
           <span className="disc-topbar-club">{CLUB_NAME}</span>
         </div>
+        <div className="disc-topbar-row2">
+          <img src={COVER_IMAGE} alt="Book cover" className="disc-topbar-cover" />
+          <div className="disc-topbar-text">
+          <span className="disc-topbar-title">{BOOK_TITLE}</span>
+          <span className="disc-topbar-author">{AUTHOR}</span>
+          <span className="disc-topbar-guide">Discussion Guide</span>
+        </div>
+      </div>
+</div>
         <div className="disc-body">
           <p className="disc-q-count">{QUESTIONS.length} Prompts</p>
           <div>
