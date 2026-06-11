@@ -19,7 +19,7 @@ const QUESTIONS = [
   {
     q: "Living in a simulation",
     context:
-      " If you found out your reality was a simulation run by someone else, would it change how you live? Does 'real' experience require a'real' world?",
+      " If you found out your reality was a simulation run by someone else, would it change how you live? Does 'real' experience require a 'real' world?",
   },
   {
     q: "Truthfulness as chaos",
