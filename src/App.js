@@ -1,5 +1,5 @@
 import { useState } from "react";
-import coverImg from "./images.jpg";
+// import coverImg from "./images.jpg";
 const FONT_URL =
   "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Playfair+Display:ital,wght@0,700;1,400&display=swap";
 
@@ -8,7 +8,7 @@ const DATE = "Sunday, 14th June";
 const VENUE = "Venue Placeholder";
 const BOOK_TITLE = "Acts Of God";
 const AUTHOR = "Kanan Gill";
-const COVER_IMAGE = coverImg;
+const COVER_IMAGE = "/images.jpg";
 
 const QUESTIONS = [
   {
