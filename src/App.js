@@ -163,6 +163,17 @@ const globalCSS = `
     display: block;
   }
 
+  .cover-author {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 13px;
+    font-weight: 400;
+    color: #8c7f72;
+    letter-spacing: 0.03em;
+    margin-top: 6px;
+    margin-bottom: 0;
+  }
+ 
   .start-btn {
     display: inline-flex;
     align-items: center;
@@ -451,6 +462,7 @@ function CoverPage({ onStart }) {
             <div className="cover-img-accent" />
           </div>
           <p className="cover-title">{BOOK_TITLE}</p>
+          <p className="cover-author">By {AUTHOR}</p>
           <hr className="cover-title-rule" />
           <button className="start-btn" onClick={onStart}>
             Start Discussion
