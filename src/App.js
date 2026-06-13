@@ -5,7 +5,7 @@ const FONT_URL =
 
 const CLUB_NAME = "SDMC Book Club";
 const DATE = "Sunday, 14th June";
-const VENUE = "Venue Placeholder";
+const VENUE = "📍Coffee Island, GK 2";
 const BOOK_TITLE = "Acts Of God";
 const AUTHOR = "Kanan Gill";
 const COVER_IMAGE = "/images.jpg";
