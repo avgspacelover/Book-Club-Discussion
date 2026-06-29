@@ -4,65 +4,64 @@ const FONT_URL =
   "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Playfair+Display:ital,wght@0,700;1,400&display=swap";
 
 const CLUB_NAME = "SDMC Book Club";
-const DATE = "Sunday, 14th June";
-const VENUE = "📍Coffee Island, GK 2";
-const BOOK_TITLE = "Acts Of God";
-const AUTHOR = "Kanan Gill";
-const COVER_IMAGE = "/images.jpg";
+const DATE = "Sunday, 26th July";
+const VENUE = "📍Kenangan Coffee, GK 2";
+const BOOK_TITLE = "Psalm For The Wild Built";
+const AUTHOR = "Becky Chambers";
+const COVER_IMAGE = "/psalm-wild-built.jpg";
 
 const QUESTIONS = [
   {
-    q: "Playing God",
+    q: "What do you need?",
     context:
-      " If you could simulate a universe and intervene in it, would you? Where would you draw the ethical line?",
+      "Dex can't answer this question themselves. Do you think most people know what they actually need, or do we mistake want, habit, and comfort for need?",
   },
   {
-    q: "Living in a simulation",
+    q: "Opting out of progress",
     context:
-      " If you found out your reality was a simulation run by someone else, would it change how you live? Does 'real' experience require a 'real' world?",
+      "Humanity chose to step back from industry and return land to nature. Is that a utopia, a fantasy, or a failure of ambition? Could you live in that world?",
   },
   {
-    q: "Truthfulness as chaos",
+    q: "The robot's purpose",
     context:
-      " The lapel pin that only tells the truth causes disorder wherever it goes. Is the novel suggesting that honesty is socially destabilising, or that the world is built on convenient fictions?",
+      "The robots were built to serve, then freed from that obligation. Does freedom require purpose — or is purposelessness the point?",
   },
   {
-    q: "Private vs. public belief",
+    q: "Mosscap's curiosity",
     context:
-      "The science-hating movement is partly built on community, not just ideology. How much of what people believe is about belonging rather than truth?",
+      "Mosscap isn't interested in helping Dex — only in understanding them. Is that a form of respect or a form of detachment?",
   },
   {
-    q: "Incompetence vs. expertise",
+    q: "Tea monk as vocation",
     context:
-      "Can you think of a time when an outsider or an amateur disrupted a system that experts couldn't? Is there value in not knowing the rules?",
+      "Dex abandons a more conventional path for one of comfort and ritual. Is that calling meaningful, or is Dex running away from something harder?",
   },
   {
-    q: "The creator's responsibility",
+    q: "Rest as radical act",
     context:
-      "If you bring something into existence — a child, a company, a community — what obligations does that create? Can you ever fully exit that responsibility?",
+      "The novel frames rest not as laziness but as a kind of ethics. Do you believe that, or does it feel like a justification?",
   },
   {
-    q: "Meaning without purpose",
+    q: "Non-human perspective",
     context:
-      " If you learned your life was part of someone else's experiment, and their goal had nothing to do with your happiness, could you still find your own meaning?",
+      "Mosscap approaches human emotion with genuine puzzlement, not judgment. Does an outside view help you see yourself more clearly, or does it flatten what's actually complex?",
   },
   {
-    q: "Gill's standup voice on the page ",
+    q: "Small scale, big questions",
     context:
-      "Several readers note they could 'hear' Gill's voice while reading. Is this an asset to the novel or a limitation? What does it mean for fiction to carry a performer's presence?",
+      "The whole novel is essentially two characters walking and talking. Does that constraint feel generous or evasive when the questions it's asking are so large?",
   },
   {
-    q: "Comedy and hard questions",
+    q: "Is this a religious book?",
     context:
-      "  Do you find it easier to engage with difficult ideas (death, meaninglessness, God) when they're wrapped in humour? Or does comedy trivialise them?",
+      "There are monks, pilgrimage, scripture, and questions of meaning. Does Chambers need the language of faith to ask what she's asking, or could she have done without it?",
   },
   {
-    q: "What does 'Acts of God' mean?",
+    q: "The wilderness as answer",
     context:
-      "The title traditionally refers to unforeseeable events beyond human control. By the end of the novel, how has Gill reframed or complicated that definition?",
+      "Dex goes into nature looking for something they can't name. Does the book suggest the wilderness provides it — or that the search itself was the point?",
   },
 ];
-
 const globalCSS = `
   @import url('${FONT_URL}');
 
